@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import 
 
 import Header from '@components/Header'
 import Footer from '@components/Footer'
@@ -35,9 +36,16 @@ export default function Protected() {
       {loggedIn ? (
         <main>
           <Header text={'Welcome to the Private Space™'} />
-          <p className="description">
-            Wow, secrets are super cool. Welcome {user?.user_metadata.full_name}!
-          </p>
+          <div className="users">
+            {users.map((user, index) => (
+              <div key={index}>
+                <h3>{user.name}</h3>
+                <img src={user.src} />
+                <p>{user.location}</p>
+                <p>{user.car}</p>
+              </div>
+            ))}
+          </div>
           <button
             onClick={() => {
               netlifyAuth.signout(() => {

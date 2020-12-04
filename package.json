@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "netlify-cli": "^2.69.1",
     "netlify-identity-widget": "^1.8.0",
     "next": "9.4.0",
     "react": "16.13.1",

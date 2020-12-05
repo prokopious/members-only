@@ -43,7 +43,14 @@ export default function Test() {
 <template id="content">
   <figure class="content-display">
     <img />
-    <gallery />
+    <gallery>  {users.map((user, index) => (
+              <div key={index}>
+                <h3>{user.name}</h3>
+                <img src={user.src} />
+                <p>{user.location}</p>
+                <p>{user.car}</p>
+              </div>
+            ))}</gallery>
     <figcaption>
       <a class="credit"></a>
     </figcaption>
@@ -143,7 +150,8 @@ export default function Test() {
           img.alt = data.alt;
 
           const gallery = content.querySelector('gallery');
-          gallery = <Gallery photos={data.src} />;
+          gallery.users = data.src;
+         
 
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;

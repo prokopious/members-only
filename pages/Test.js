@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Gallery from 'react-photo-gallery';
 
 export default function Test() {
 
@@ -73,6 +74,8 @@ fetch('/.netlify/functions/get-protected-content', {
 })
   .then((res) => res.json())
   .then((data) => {
+    const photos = data.src;
+    console.log(data);
     const template = document.querySelector('#content');
     const container = document.querySelector(`.${type}`);
 
@@ -144,7 +147,7 @@ netlifyIdentity.on('logout', handleUserStateChange);
   <div class="content">
     <h2>Premium Content</h2>
     <div class="premium"></div>
-  </div> <Gallery images={data.src} />
+  </div> <Gallery images={photos} />
 </div>
 
 <template id="content">

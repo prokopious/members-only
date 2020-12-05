@@ -40,7 +40,7 @@ export default function Test() {
   </div>
 </div>
 
-<div id="content"><Gallery /></div>
+<template id="content"><Gallery /></template>
 
 </>
 

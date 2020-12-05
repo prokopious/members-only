@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Gallery from 'react-photo-gallery';
+import React from 'react';
 
 export default function Test() {
 

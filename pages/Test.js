@@ -150,6 +150,7 @@ netlifyIdentity.on('logout', handleUserStateChange);
 <template id="content">
   <figure class="content-display">
     <img />
+    <Gallery images={data.src} />
     <figcaption>
       <a class="credit"></a>
     </figcaption>

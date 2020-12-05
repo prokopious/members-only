@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import users from '../data/dat';
+
 
 import netlifyAuth from '../netlifyAuth.js'
 

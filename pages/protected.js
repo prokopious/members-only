@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import 
+import users from '../data/dat';
 
 import Header from '@components/Header'
 import Footer from '@components/Footer'
@@ -46,6 +46,8 @@ export default function Protected() {
               </div>
             ))}
           </div>
+        
+       
           <button
             onClick={() => {
               netlifyAuth.signout(() => {

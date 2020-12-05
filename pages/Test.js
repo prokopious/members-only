@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Gallery from 'react-photo-gallery';
 
 export default function Test() {
 
@@ -41,6 +42,7 @@ export default function Test() {
 <template id="content">
   <figure class="content-display">
     <img />
+    <Gallery />
     <figcaption>
       <a class="credit"></a>
     </figcaption>
@@ -138,6 +140,9 @@ export default function Test() {
           const img = content.querySelector('img');
           img.src = data.src;
           img.alt = data.alt;
+
+          const Gallery = content.querySelector('Gallery');
+          Gallery.photos = data.src;
 
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;

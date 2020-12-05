@@ -40,22 +40,9 @@ export default function Test() {
   </div>
 </div>
 
-<template id="content">
-  <figure class="content-display">
-    <img />
-    <gallery>  {users.map((user, index) => (
-              <div key={index}>
-                <h3>{user.name}</h3>
-                <img src={user.src} />
-                <p>{user.location}</p>
-                <p>{user.car}</p>
-              </div>
-            ))}</gallery>
-    <figcaption>
-      <a class="credit"></a>
-    </figcaption>
-  </figure>
-</template></>
+<div id="content"><Gallery /></div>
+
+</>
 
         )
 
@@ -145,9 +132,9 @@ export default function Test() {
 
           const content = template.content.cloneNode(true);
 
-          const img = content.querySelector('img');
-          img.src = data.src;
-          img.alt = data.alt;
+          const Gallery = content.querySelector('Gallery');
+          Gallery.photos = data.src;
+         
 
           const gallery = content.querySelector('gallery');
           gallery.users = data.src;

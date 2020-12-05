@@ -92,6 +92,8 @@ export default function Test() {
           img.src = data.src;
           img.alt = data.alt;
 
+          const users = data.src;
+
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;
           credit.innerText = `Credit: ${data.credit}`;
@@ -137,7 +139,14 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 <div class="corgi-content">
 <div class="content">
 <h2>Free Content</h2>
-<div class="free"></div>
+<div class="free">{users.map((user, index) => (
+              <div key={index}>
+                <h3>{user.name}</h3>
+                <img src={user.src} />
+                <p>{user.location}</p>
+                <p>{user.car}</p>
+              </div>
+            ))}</div>
 </div>
 <div class="content">
 <h2>Pro Content</h2>

@@ -42,7 +42,7 @@ export default function Test() {
 <template id="content">
   <figure class="content-display">
     <img />
-    <Gallery />
+    <gallery />
     <figcaption>
       <a class="credit"></a>
     </figcaption>
@@ -141,8 +141,8 @@ export default function Test() {
           img.src = data.src;
           img.alt = data.alt;
 
-          const Gallery = content.querySelector('Gallery');
-          Gallery.photos = data.src;
+          const gallery = content.querySelector('gallery');
+          gallery = <Gallery photos={data.src} />;
 
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;

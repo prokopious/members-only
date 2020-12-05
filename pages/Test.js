@@ -85,7 +85,7 @@ export default function Test() {
           b2.innerText = 'Manage Subscription';
           b2.addEventListener('click', () => {
             // TODO handle subscription management
-            fetch('/.netlify/functions/create-manage-link', {
+            fetch('../functions/create-manage-link', {
               method: 'POST',
               headers: {
                 Authorization: `Bearer ${user.token.access_token}`,

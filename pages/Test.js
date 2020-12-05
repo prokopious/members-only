@@ -144,13 +144,13 @@ netlifyIdentity.on('logout', handleUserStateChange);
   <div class="content">
     <h2>Premium Content</h2>
     <div class="premium"></div>
-  </div>
+  </div> <Gallery images={data.src} />
 </div>
 
 <template id="content">
   <figure class="content-display">
     <img />
-    <Gallery images={data.src} />
+   
     <figcaption>
       <a class="credit"></a>
     </figcaption>

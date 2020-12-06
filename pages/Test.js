@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Gallery from 'react-photo-gallery';
 
 export default function Test() {
 
@@ -10,7 +11,7 @@ export default function Test() {
           const button1 = document.getElementById('left');
   const button2 = document.getElementById('right');
 
-  button1.innerText = "sdfdfs";
+
 
   const login = () => netlifyIdentity.open('login');
   const signup = () => netlifyIdentity.open('signup');
@@ -92,8 +93,8 @@ export default function Test() {
           img.src = data.src;
           img.alt = data.alt;
 
-          const Gallery = content.querySelector('Gallery');
-          Gallery.photos = data.photos;
+          constbgal = content.querySelector('gal');
+          gal.photos = data.photos;
 
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;
@@ -155,7 +156,7 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 <template id="content">
 <figure class="content-display">
 <img />
-<Gallery />
+<Gallery id="gal" />
 <figcaption>
 <a class="credit"></a>
 </figcaption>

@@ -93,7 +93,7 @@ export default function Test() {
           img.src = data.src;
           img.alt = data.alt;
 
-          constbgal = content.querySelector('gal');
+          const gal = content.querySelector('gal');
           gal.photos = data.photos;
 
           const credit = content.querySelector('.credit');

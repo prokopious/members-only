@@ -1,20 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-
-import netlifyAuth from '../netlifyAuth.js'
 
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
-export default function Home() {
+import netlifyAuth from '../netlifyAuth.js'
+
+export default function Protected() {
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated)
+  let [user, setUser] = useState(null)
 
   useEffect(() => {
     let isCurrent = true
     netlifyAuth.initialize((user) => {
       if (isCurrent) {
         setLoggedIn(!!user)
+        setUser(user)
       }
     })
 
@@ -23,12 +25,6 @@ export default function Home() {
     }
   }, [])
 
-  let login = () => {
-    netlifyAuth.authenticate((user) => {
-      setLoggedIn(!!user)
-    })
-  }
-
   return (
     <div className="container">
       <Head>
@@ -36,23 +32,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header text={'Welcome to the Public Space™'} />
-        <p className="description">
-          We are in a public space, for the people who aren't able to access the super fancy
-          members-only area. You hear snobbish laughter in the distance.
-        </p>
-        {loggedIn ? (
-          <div>
-            You're logged in! Please do visit{' '}
-            <Link href="/protected">
-              <a>the special, members-only space.</a>
-            </Link>
-          </div>
-        ) : (
-          <button onClick={login}>Log in here to access the members-only area.</button>
-        )}
-      </main>
+      {loggedIn ? (
+        <main>
+          <Header text={'Welcome to the Private Space™'} />
+          <p className="description">
+            Wow, secrets are super cool. Welcome {user?.user_metadata.full_name}!
+          </p>
+          <button
+            onClick={() => {
+              netlifyAuth.signout(() => {
+                setLoggedIn(false)
+                setUser(null)
+              })
+            }}
+          >
+            Log out.
+          </button>
+        </main>
+      ) : (
+        <main>
+          <p>YOU ARE NOT ALLOWED HERE.</p>
+          <Link href="/">
+            <a>Go back to the grody public space.</a>
+          </Link>
+        </main>
+      )}
 
       <Footer />
 
@@ -72,13 +76,6 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
         }
       `}</style>
 

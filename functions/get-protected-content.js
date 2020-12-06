@@ -52,6 +52,7 @@ exports.handler = async (event, context) => {
           'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1592618179/stripe-subscription/subscription-required.jpg',
         alt: 'corgi in a crossed circle with the text “subscription required”',
         credit: 'Jason Lengstorf',
+        photos: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpvMeWq56nv9iLqI8Xn_f1w3hpSBZFuu14JQ&usqp=CAU',
         creditLink: 'https://dribbble.com/jlengstorf',
         message: `This content requires a ${type} subscription.`,
       }),

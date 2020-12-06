@@ -92,8 +92,11 @@ export default function Test() {
           img.alt = data.alt;
 
           const img2 = content.querySelector('img2');
-          img2.src = data.src;
+          img2.src = data.photos;
           img2.alt = data.alt;
+
+          const photoz = data.photos;
+          console.log(photoz);
 
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;
@@ -132,32 +135,32 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
   
 <h1>Sign Up for Premium Corgi Content</h1>
 
-<div class="user-info">
+<div className="user-info">
 <button id="left">Log In</button>
 <button id="right">Sign Up</button>
 </div>
 
-<div class="corgi-content">
-<div class="content">
+<div className="corgi-content">
+<div className="content">
 <h2>Free Content</h2>
-<div class="free"></div>
+<div className="free"></div>
 </div>
-<div class="content">
+<div className="content">
 <h2>Pro Content</h2>
 <div class="pro"></div>
 </div>
-<div class="content">
+<div className="content">
 <h2>Premium Content</h2>
-<div class="premium"></div>
+<div className="premium"></div>
 </div>
 </div>
 
 <template id="content">
-<figure class="content-display">
+<figure className="content-display">
 <img />
-<img2 />
+<img id="img2" />
 <figcaption>
-<a class="credit"></a>
+<a className="credit"></a>
 </figcaption>
 </figure>
 </template></>

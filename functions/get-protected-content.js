@@ -1,10 +1,8 @@
 const content = {
   free: {
-    src: 'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
+    src:
+      'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
     alt: 'corgi in the park with a sunset in the background',
-    photos:       ['https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
-    'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
-    'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80'],
     credit: 'Jacob Van Blarcom',
     creditLink: 'https://unsplash.com/photos/lkzjENdWgd8',
     message: 'To view this content, you need to create an account!',
@@ -14,9 +12,6 @@ const content = {
     src:
       'https://images.unsplash.com/photo-1519098901909-b1553a1190af?auto=format&fit=crop&w=600&h=600&q=80',
     alt: 'close-up of a corgi with its tongue hanging out',
-    photos:       ['https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
-    'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
-    'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80'],
     credit: 'Florencia Potter',
     creditLink: 'https://unsplash.com/photos/yxmNWxi3wCo',
     message:
@@ -27,9 +22,6 @@ const content = {
     src:
       'https://images.unsplash.com/photo-1546975490-e8b92a360b24?auto=format&fit=crop&w=600&h=600&q=80',
     alt: 'corgi in a tent with string lights in the foreground',
-    photos:       ['https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
-    'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80',
-    'https://images.unsplash.com/photo-1550159930-40066082a4fc?auto=format&fit=crop&w=600&h=600&q=80'],
     credit: 'Cole Keister',
     creditLink: 'https://unsplash.com/photos/cX-KEISwDIw',
     message:
@@ -52,7 +44,6 @@ exports.handler = async (event, context) => {
           'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1592618179/stripe-subscription/subscription-required.jpg',
         alt: 'corgi in a crossed circle with the text “subscription required”',
         credit: 'Jason Lengstorf',
-        photos: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpvMeWq56nv9iLqI8Xn_f1w3hpSBZFuu14JQ&usqp=CAU',
         creditLink: 'https://dribbble.com/jlengstorf',
         message: `This content requires a ${type} subscription.`,
       }),

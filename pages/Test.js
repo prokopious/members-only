@@ -92,7 +92,8 @@ export default function Test() {
           img.src = data.src;
           img.alt = data.alt;
 
-          const users = data.src;
+          const Gallery = content.querySelector('Gallery');
+          Gallery.photos = data.photos;
 
           const credit = content.querySelector('.credit');
           credit.href = data.creditLink;
@@ -139,14 +140,7 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 <div class="corgi-content">
 <div class="content">
 <h2>Free Content</h2>
-<div class="free">{users.map((user, index) => (
-              <div key={index}>
-                <h3>{user.name}</h3>
-                <img src={user.src} />
-                <p>{user.location}</p>
-                <p>{user.car}</p>
-              </div>
-            ))}</div>
+<div class="free"></div>
 </div>
 <div class="content">
 <h2>Pro Content</h2>
@@ -161,6 +155,7 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 <template id="content">
 <figure class="content-display">
 <img />
+<Gallery />
 <figcaption>
 <a class="credit"></a>
 </figcaption>
@@ -168,8 +163,4 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 </template></>
 
 )
-
-
-
-
 }

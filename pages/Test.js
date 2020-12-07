@@ -92,6 +92,9 @@ export default function Test() {
           img.src = data.src;
           img.alt = data.alt;
 
+          const gallery = content.querySelector('orb');
+          gallery.innerHTML = "hellow world";
+
           const img2 = content.querySelector('img2');
           img2.src = data.photos;
           img2.alt = data.alt;
@@ -161,6 +164,7 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
   
 <img />
 <img id="img2" />
+<div id="orb"></div>
 <figcaption>
 <a className="credit"></a>
 </figcaption>

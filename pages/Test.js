@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Gallery from 'react-photo-gallery';
 
 export default function Test() {
 
@@ -157,6 +158,7 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 
 <template id="content">
 <figure className="content-display">
+  <Gallery />
 <img />
 <img id="img2" />
 <figcaption>

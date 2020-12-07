@@ -158,7 +158,7 @@ src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 
 <template id="content">
 <figure className="content-display">
-  <Gallery />
+  
 <img />
 <img id="img2" />
 <figcaption>
